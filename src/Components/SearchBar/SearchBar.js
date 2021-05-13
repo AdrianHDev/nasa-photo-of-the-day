@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Results from "./Results";
-import "./SearchBar.css";
+import styled from 'styled-components';
+
+const StyledSearchBar = styled.div`
+display: flex;
+justify-content: space-between;
+`
+
+const StyledSearchBarImg = styled.img`
+  width:200px;
+`
+
+const SearchForm = styled.div`
+  position:relative;
+`
 
 const SearchBar = (props) => {
     const {posts, setCurPost} = props;
@@ -33,9 +46,9 @@ const SearchBar = (props) => {
 
 
     return (
-    <div className="search-bar-wrapper">
-      <img alt="" title="APOD Logo" src='https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/90/73/2f/90732f8e-c419-a63c-4033-f560a072c3ef/contsched.oyszacnp.lsr/1280x768bb.png'></img>
-      <form className="search-form">
+    <StyledSearchBar>
+      <StyledSearchBarImg alt="" title="APOD Logo" src='https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/90/73/2f/90732f8e-c419-a63c-4033-f560a072c3ef/contsched.oyszacnp.lsr/1280x768bb.png'/>
+      <SearchForm className="search-form">
         <input
           type="text"
           placeholder="Search Query Here"
@@ -43,8 +56,8 @@ const SearchBar = (props) => {
           onChange={changeEv}
         />
       <Results setSearchTerm={setSearchTerm} hideResults={`${String(hideResults)}`} setHideResults={setHideResults} setCurPost={setCurPost} results={searchResults}></Results>
-      </form>
-    </div>
+      </SearchForm>
+    </StyledSearchBar>
     )
 }
 
