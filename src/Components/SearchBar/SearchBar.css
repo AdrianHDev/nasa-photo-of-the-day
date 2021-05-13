@@ -1,0 +1,31 @@
+.search-bar-wrapper {
+    display:flex;
+    justify-content: space-between;
+}
+
+.search-bar-wrapper img {
+    width: 200px;
+}
+.search-form {
+    /* display: none; */
+    position: relative;
+}
+
+.results {
+    background-color: white;
+    z-index: 1;
+    position: absolute;
+    color: black;
+    padding: 5px 8px;
+    display: list;
+}
+
+.results div {
+    border: 1px black solid;
+    margin-top: -1px;
+    padding: 10px 3px;
+}
+
+.results div:hover {background-color: #6ff5ff;}
+
+.show {display:block; }
