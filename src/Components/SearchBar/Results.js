@@ -7,7 +7,7 @@ const StyledResults = styled.div`
     position: absolute;
     color: black;
     padding: 5px 8px;
-    display: list;
+    display: ${props => props.displayType};
 `
 
 const StyledResult = styled.div`
@@ -21,17 +21,8 @@ const Results = props => {
     
     if (results[0] !== undefined ){
         if (results[0][0] !== undefined ) {
-            let style = {}
-        if (hideResults === true || results.length === 10) {
-            style = {
-                display:'none',
-        }} else {
-            style ={
-                display:'block',
-            }
-        };
         return (
-            <StyledResults style={style}>
+            <StyledResults displayType={hideResults}>
                 {results.map((x) => {
                     const post = x[0]
                     const index = x[1]

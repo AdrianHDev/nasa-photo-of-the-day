@@ -19,7 +19,7 @@ const SearchBar = (props) => {
     const {posts, setCurPost} = props;
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([{}, 0]);
-    const [hideResults, setHideResults] = useState('true');
+    const [hideResults, setHideResults] = useState('none');
 
     const changeEv = event => {
         event.persist();
@@ -40,8 +40,8 @@ const SearchBar = (props) => {
 
     useEffect(() => {
       if (searchResults.length !== 10 && searchResults.length !== 0) {
-        setHideResults('false');
-      } else { setHideResults('true');}
+        setHideResults('list');
+      } else { setHideResults('none');}
     }, [searchResults])
 
 
